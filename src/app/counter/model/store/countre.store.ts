@@ -1,29 +1,24 @@
-import { action, makeAutoObservable } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 
 /**
  * Counter Store
  */
 class CounterStore {
   public constructor() {
-    makeAutoObservable(this, {
-      count: action.bound,
-      getData: action.bound
-    });
+    makeAutoObservable(this);
   }
-
-  //public global: AppStore;
 
   public counter: number = 50;
 
   // @action.bound
-  count() {
+  count = () => {
     this.counter += 1;
-  }
+  };
 
   // @action.bound
-  getData() {
+  getData = () => {
     this.counter = 10;
-  }
+  };
 }
 
 export { CounterStore };
