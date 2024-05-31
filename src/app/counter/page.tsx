@@ -2,13 +2,16 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { observer } from 'mobx-react-lite';
 
-import { hoc } from '@/shared/utils/hoc';
+import { useStore } from '@/shared/lib/hooks/useStore';
 
-import { useCounter } from './model/props/useCounter.props';
-
-const Counter = hoc.observer(useCounter, ({ counter, count, getData }) => {
+const Counter = observer(() => {
   const { t } = useTranslation();
+
+  const {
+    counterStore: { counter, count, getData }
+  } = useStore();
 
   return (
     <div>

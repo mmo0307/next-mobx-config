@@ -1,16 +1,13 @@
+// import BuilderDevTools from '@builder.io/dev-tools/next';
+
+// DEVTOOLS BUILDER enabled wrap nextConfig
+// const nextConfig = BuilderDevTools()({...})
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        reactCompiler: true
-    }
-    // webpack(config) {
-    //     config.resolve.alias = {
-    //         ...config.resolve.alias,
-    //
-    //         '@': './src/*',
-    //         "@styles": "./src/shared/styles/globals.scss"
-    //     }
-    // }
+  experimental: {
+    reactCompiler: true
+  }
 };
 
 export default nextConfig;

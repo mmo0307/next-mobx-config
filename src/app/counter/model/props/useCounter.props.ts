@@ -1,3 +1,5 @@
+'use client';
+
 import { useStore } from '@/shared/lib/hooks/useStore';
 
 const useCounter = () => {
