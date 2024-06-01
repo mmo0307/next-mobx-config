@@ -1,26 +1,35 @@
 'use client';
 
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { hoc } from '@/shared/utils/hoc';
 
 import { useCounter } from './model/props/useCounter.props';
 
-const Counter = hoc.observer(useCounter, ({ counter, count, getData }) => {
-  const { t } = useTranslation();
+import styles from './ui.module.scss';
 
-  return (
-    <div>
-      <p>
-        {t('Counter:')} {counter}
-      </p>
+const Counter = hoc.observer(useCounter, ({ t, counter, count, getData }) => (
+  <div className={styles.backGround}>
+    <p>
+      {t('Counter:')} {counter}
+    </p>
 
-      <button onClick={count}>{t('Count')}</button>
+    <div className='grid gap-4 grid-cols-2'>
+      <button
+        className={styles.button}
+        onClick={count}
+      >
+        {t('Count')}
+      </button>
 
-      <button onClick={getData}>{t('Get Data')}</button>
+      <button
+        className={styles.button}
+        onClick={getData}
+      >
+        {t('Get Data')}
+      </button>
     </div>
-  );
-});
+  </div>
+));
 
 export default Counter;
