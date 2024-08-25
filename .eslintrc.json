@@ -76,7 +76,8 @@
     "simple-import-sort",
     "i18next",
     "plugin-checker",
-    "unused-imports"
+    "unused-imports",
+    "stylelint-no-unused-selectors"
   ],
   "rules": {
     "no-extra-boolean-cast": 0,
@@ -139,7 +140,11 @@
       }
     ],
     "@typescript-eslint/no-explicit-any": "off",
-    "no-duplicate-imports": ["error", { "includeExports": true }]
+    "no-duplicate-imports": ["error", { "includeExports": true }]б
+    "plugin/no-unused-selectors": [true, {
+      "files": ["**/*.html", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+      "severity": "warning"
+    }]
   },
   "settings": {
     "import/resolver": {
